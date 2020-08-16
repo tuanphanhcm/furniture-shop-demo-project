@@ -5,7 +5,7 @@ server:
 #-- MySql Server Configuration
 spring:
   datasource:
-    url: jdbc:mysql://furdb.cpptvtdioztc.ap-southeast-1.rds.amazonaws.com/furnitureshop
+    url: jdbc:mysql://furdb.cpptvtdioztc.ap-southeast-1.rds.amazonaws.com/FURNITURESHOP
     username: admin
     password: x9NK9AAvFTrlcRemdO4d
     driver-class-name: com.mysql.cj.jdbc.Driver
