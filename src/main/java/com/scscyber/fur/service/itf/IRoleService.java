@@ -1,4 +1,4 @@
-package com.scscyber.fur.service;
+package com.scscyber.fur.service.itf;
 
 import com.scscyber.fur.model.dto.RoleWithUsers;
 import com.scscyber.fur.model.pojo.Role;
