@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.scscyber.fur.mybatis.mapper.RoleMapper">
+
+    <resultMap id="roleWithUsers" type="RoleWithUsers">
+        <id property="roleId" column="ROLE_ID"/>
+        <id property="roleName" column="ROLE_NAME" />
+        <id property="roleDescription" column="ROLE_DESCRIPTION" />
+        <collection property="users" ofType="User">
+            <id property="userId" column="USER_ID" />
+            <id property="loginName" column="LOGIN_NAME"/>
+            <id property="email" column="EMAIL"/>
+            <id property="phone" column="PHONE" />
+            <id property="citizenId" column="CITIZEN_ID" />
+        </collection>
+    </resultMap>
+
     <select id="getAllRole" resultType="Role">
         SELECT
             ROLE_ID
@@ -35,4 +49,21 @@
             AND ROLE_NAME = #{roleName}
             AND DELETED_YN = 'N'
     </select>
+
+    <select id="getAllRoleWithUsers" resultMap="roleWithUsers">
+        SELECT
+            R.ROLE_ID
+            , R.ROLE_NAME
+            , R.ROLE_DESCRIPTION
+            , U.USER_ID
+            , U.LOGIN_NAME
+            , U.PASSWORD
+            , U.EMAIL
+            , U.PHONE
+            , U.CITIZEN_ID
+        FROM
+            ROLES R LEFT JOIN USERS U ON R.ROLE_ID = U.ROLE_ID
+        WHERE 1 = 1
+    </select>
+
 </mapper>
