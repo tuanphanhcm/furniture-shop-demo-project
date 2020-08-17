@@ -1,6 +1,5 @@
 package com.scscyber.fur.model.pojo;
 
-import com.apple.eawt.AppEvent;
 import lombok.Data;
 
 @Data
