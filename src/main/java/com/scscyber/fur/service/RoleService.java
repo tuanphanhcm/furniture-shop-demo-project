@@ -1,8 +1,9 @@
 package com.scscyber.fur.service;
 
+import com.scscyber.fur.model.dto.RoleWithUsers;
 import com.scscyber.fur.model.pojo.Role;
 import com.scscyber.fur.mybatis.mapper.RoleMapper;
-import com.scscyber.fur.repository.RoleRepository;
+import com.scscyber.fur.service.itf.IRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,5 +32,10 @@ public class RoleService implements IRoleService {
     @Override
     public Role getRoleByName(String roleName) {
         return roleMapper.getRoleByName(roleName);
+    }
+
+    @Override
+    public List<RoleWithUsers> getAllRoleWithUsers() {
+        return roleMapper.getAllRoleWithUsers();
     }
 }
