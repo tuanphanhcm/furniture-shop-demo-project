@@ -1,5 +1,6 @@
 package com.scscyber.fur.endpoint;
 
+import com.scscyber.fur.model.dto.RoleWithUsers;
 import com.scscyber.fur.model.pojo.Role;
 import com.scscyber.fur.service.RoleService;
 import org.springframework.http.HttpStatus;
@@ -23,6 +24,17 @@ public class RoleController {
     @GetMapping("")
     public ResponseEntity<List<Role>> getAllRole(){
         List<Role> listRole = roleService.getAllRole();
+
+        if(listRole.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+
+        return new ResponseEntity<>(listRole, HttpStatus.OK);
+    }
+
+    @GetMapping("/roleWithUsers")
+    public ResponseEntity<List<RoleWithUsers>> getAllRoleWithUsers(){
+        List<RoleWithUsers> listRole = roleService.getAllRoleWithUsers();
 
         if(listRole.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
