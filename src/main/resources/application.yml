@@ -17,3 +17,6 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
 
+#-- Email
+email.user-name: chinghia28.1997@gmail.com
+email.password: qaznghia123

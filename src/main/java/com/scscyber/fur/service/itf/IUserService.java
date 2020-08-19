@@ -1,5 +1,9 @@
 package com.scscyber.fur.service.itf;
 
-public interface IUserService {
+import com.scscyber.fur.model.dto.MessageDto;
+import com.scscyber.fur.model.dto.UserDto;
+import org.springframework.validation.BindingResult;
 
+public interface IUserService {
+    MessageDto CreateUserByEmail(UserDto userDto, BindingResult bindingResult);
 }
