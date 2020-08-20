@@ -1,4 +1,4 @@
-package com.scscyber.fur.common.function.Interface;
+package com.scscyber.fur.common.service.Interface;
 
 import com.scscyber.fur.model.dto.EmailRequestDto;
 

@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 
 @Data
 public class UserDto {
-    @NotBlank(message = "Email is required")
-    @Email(regexp = ConstantValue.EmailRegex, message = "Email is not valid")
+    @NotBlank(message = "EmailRequired")
+    @Email(regexp = ConstantValue.EmailRegex, message = "EmailNotValid")
     private String email;
 }

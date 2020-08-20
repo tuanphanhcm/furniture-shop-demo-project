@@ -1,6 +1,6 @@
-package com.scscyber.fur.common.function;
+package com.scscyber.fur.common.service;
 
-import com.scscyber.fur.common.function.Interface.IEmailHandler;
+import com.scscyber.fur.common.service.Interface.IEmailHandler;
 import com.scscyber.fur.model.dto.EmailRequestDto;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
